@@ -11,7 +11,9 @@ Future<void> main() async {
   /*
   * To get Notification on when app is killed
   * */
-  FirebaseMessaging.onBackgroundMessage((message) =>firebaseMessagingBackgroundHandler(message));
+  if( FirebaseMessaging.onBackgroundMessage!=null){
+    FirebaseMessaging.onBackgroundMessage((message) =>firebaseMessagingBackgroundHandler(message));
+  }
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

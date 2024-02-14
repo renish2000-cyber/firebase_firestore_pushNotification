@@ -1,3 +1,7 @@
 1) Google Authentication : gmail
 2) Firebase FireStore implemented
-3) cloud messaging
+3) cloud messaging: "Subscribe to specific topic to get notification"
+                    "token based send Notification"
+
+                    In App Message at launch time work : Done
+                    In App Message at foreground time  : Not Work
