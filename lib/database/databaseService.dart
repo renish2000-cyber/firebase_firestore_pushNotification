@@ -15,9 +15,18 @@ class DatabaseService{
   }
   void addTodo(Todo todo)async{
     await todoRef.add(todo);
+    await todoRef;
   }
   Stream<QuerySnapshot> getTodo(){
     return  todoRef.snapshots();
+  }
+  // Update the note
+  Future<void> updateTodo(String docId,Todo todo) {
+    return todoRef.doc(docId).update(todo.toJson());
+  }
+  // Delete note using given docId
+  Future<void> deleteNote(String docId) {
+    return todoRef.doc(docId).delete();
   }
 
 }

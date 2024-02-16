@@ -19,11 +19,18 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController pName = TextEditingController();
   NotificationService notificationService = NotificationService();
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     final scaffoldMessenger= ScaffoldMessenger.of(context);
-
+    /*
+    * Login Method
+    * */
     Future<void> login() async {
       String email = uName.text.trim();
       String psw = pName.text.trim();
@@ -99,8 +106,8 @@ class _LoginScreenState extends State<LoginScreen> {
               icon: const Icon(Icons.g_mobiledata_outlined),
               label: const Text("Login using Google"),
             ),
-            TextButton(child: Text("Create Account"),onPressed: ()async{Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterUser(),));},),
-            SizedBox(height: 20),
+            TextButton(child: const Text("Create Account"),onPressed: ()async{Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterUser(),));},),
+            const SizedBox(height: 20),
             OutlinedButton.icon(
               onPressed: () async{
                 await subscribeNotification();
