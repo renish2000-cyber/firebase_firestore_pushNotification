@@ -2,6 +2,7 @@ import 'package:crudoperation/dashboard.dart';
 import 'package:crudoperation/google_auth/register.dart';
 import 'package:crudoperation/notification_service/notificationService.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_in_app_messaging/firebase_in_app_messaging.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +23,8 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     // TODO: implement initState
+    
+    FirebaseInAppMessaging.instance.triggerEvent("on_foreground");
     super.initState();
   }
 

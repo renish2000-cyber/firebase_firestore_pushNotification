@@ -10,13 +10,15 @@ class NotificationService {
       FlutterLocalNotificationsPlugin();
 
   Future<void> initNotification() async {
+    /*
+    * Move Request permission one fist screen (eg:splash screen)
+    * */
     await messaging.requestPermission();
     await getToken();
     initLocalNotification();
     FirebaseMessaging.onMessage.listen((event) {
       showNotification(event);
     });
-
   }
   /*
   * getToken method return device specific token to send Specific user Notification
