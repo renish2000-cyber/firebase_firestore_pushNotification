@@ -8,3 +8,4 @@
 
 4) When click on notification take payload and navigate proper screen remaining
 5) IN IOS Remaining
+6) For Messaging Events : https://firebase.google.com/docs/cloud-messaging/flutter/receive
